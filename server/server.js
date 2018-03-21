@@ -5,11 +5,11 @@ var bodyParser = require("body-parser");
 var {mongoose} = require("./db/mongoose");
 var  {Todo} = require("./models/todo");
 var  {Users} = require("./models/users");
-
+const port = process.env.PORT || 3000 ;
 var app = express();
 
-app.listen(3000, () => {
-console.log("Started on port 3000");
+app.listen(port, () => {
+console.log("Started on port" +  port);
 })
 
 app.use(bodyParser.json());
