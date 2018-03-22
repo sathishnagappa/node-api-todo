@@ -157,12 +157,12 @@ describe("DELETE/todos/:id", (done) => {
         });
 
         it("should clear completedAt when todo is not completed", (done) => {
-            var text = "This is new test";
+            var text = "This is new test!!";
             request(app)
             .patch("/todos/" + todos[1]._id.toHexString())
             .send({
-                text,
-                completed : false
+                completed : false,
+                text                
             })
             .expect(200)
             .expect((res)=> {
