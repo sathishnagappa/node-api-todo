@@ -142,9 +142,9 @@ app.post("/users/login", (req,res) => {
 
 app.delete("/users/me/token", authenticate , (req,res) => {
   req.user[0].removeToken(req.token).then(() => {
-     res.send(200).send();
+     res.status(200).send();
   }, () => {
-      res.send(400).send();
+      res.status(400).send();
   });
 });
 
